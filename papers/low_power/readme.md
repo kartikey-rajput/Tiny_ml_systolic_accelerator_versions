@@ -1,0 +1,1 @@
+all the papers related to the low power systolic array accelerator implementation.

@@ -1,0 +1,1 @@
+all the papers used for the comprehensive study of the tiny ml implementation and edge ai .
