@@ -1,0 +1,95 @@
+$date
+	Wed Jul 15 17:11:46 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module accumulator_tb $end
+$var wire 16 ! sum [15:0] $end
+$var parameter 32 " WIDTH $end
+$var reg 1 # clk $end
+$var reg 16 $ data_in [15:0] $end
+$var reg 1 % en $end
+$var reg 1 & rst $end
+$scope module dut $end
+$var wire 1 # clk $end
+$var wire 16 ' data_in [15:0] $end
+$var wire 1 % en $end
+$var wire 1 & rst $end
+$var parameter 32 ( WIDTH $end
+$var reg 16 ) sum [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 (
+b1000 "
+$end
+#0
+$dumpvars
+bx )
+b0 '
+1&
+0%
+b0 $
+0#
+bx !
+$end
+#5000
+b0 !
+b0 )
+1#
+#10000
+0#
+b1010 $
+b1010 '
+1%
+0&
+#15000
+b1010 !
+b1010 )
+1#
+#20000
+0#
+b10100 $
+b10100 '
+#25000
+b11110 !
+b11110 )
+1#
+#30000
+0#
+b11110 $
+b11110 '
+#35000
+b111100 !
+b111100 )
+1#
+#40000
+0#
+b101000 $
+b101000 '
+#45000
+b1100100 !
+b1100100 )
+1#
+#50000
+0#
+b1100100 $
+b1100100 '
+0%
+#55000
+1#
+#60000
+0#
+1&
+#65000
+b0 !
+b0 )
+1#
+#70000
+0#

@@ -1,0 +1,80 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x561c4c62b300 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x561c4c62b490 .scope module, "multiplier_tb" "multiplier_tb" 3 3;
+ .timescale -9 -12;
+P_0x561c4c62b2b0 .param/l "WIDTH" 0 3 5, +C4<00000000000000000000000000001000>;
+v0x561c4c641830_0 .var "a", 7 0;
+v0x561c4c6418f0_0 .var "b", 7 0;
+v0x561c4c6419c0_0 .net "product", 15 0, L_0x561c4c641d70;  1 drivers
+S_0x561c4c5f1490 .scope module, "dut" "multiplier" 3 17, 4 2 0, S_0x561c4c62b490;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 8 "a";
+    .port_info 1 /INPUT 8 "b";
+    .port_info 2 /OUTPUT 16 "product";
+P_0x561c4c5f1670 .param/l "WIDTH" 0 4 3, +C4<00000000000000000000000000001000>;
+v0x561c4c5f1790_0 .net *"_ivl_0", 15 0, L_0x561c4c641ac0;  1 drivers
+L_0x7434c68b0018 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v0x561c4c641210_0 .net *"_ivl_3", 7 0, L_0x7434c68b0018;  1 drivers
+v0x561c4c6412f0_0 .net *"_ivl_4", 15 0, L_0x561c4c641c30;  1 drivers
+L_0x7434c68b0060 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v0x561c4c6413e0_0 .net *"_ivl_7", 7 0, L_0x7434c68b0060;  1 drivers
+v0x561c4c6414c0_0 .net "a", 7 0, v0x561c4c641830_0;  1 drivers
+v0x561c4c6415f0_0 .net "b", 7 0, v0x561c4c6418f0_0;  1 drivers
+v0x561c4c6416d0_0 .net "product", 15 0, L_0x561c4c641d70;  alias, 1 drivers
+L_0x561c4c641ac0 .concat [ 8 8 0 0], v0x561c4c641830_0, L_0x7434c68b0018;
+L_0x561c4c641c30 .concat [ 8 8 0 0], v0x561c4c6418f0_0, L_0x7434c68b0060;
+L_0x561c4c641d70 .arith/mult 16, L_0x561c4c641ac0, L_0x561c4c641c30;
+    .scope S_0x561c4c62b490;
+T_0 ;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x561c4c641830_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x561c4c6418f0_0, 0, 8;
+    %delay 10000, 0;
+    %pushi/vec4 5, 0, 8;
+    %store/vec4 v0x561c4c641830_0, 0, 8;
+    %pushi/vec4 3, 0, 8;
+    %store/vec4 v0x561c4c6418f0_0, 0, 8;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 8;
+    %store/vec4 v0x561c4c641830_0, 0, 8;
+    %pushi/vec4 20, 0, 8;
+    %store/vec4 v0x561c4c6418f0_0, 0, 8;
+    %delay 10000, 0;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x561c4c641830_0, 0, 8;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x561c4c6418f0_0, 0, 8;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 8;
+    %store/vec4 v0x561c4c641830_0, 0, 8;
+    %pushi/vec4 12, 0, 8;
+    %store/vec4 v0x561c4c6418f0_0, 0, 8;
+    %delay 10000, 0;
+    %vpi_call/w 3 51 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x561c4c62b490;
+T_1 ;
+    %vpi_call/w 3 55 "$dumpfile", "verification/waveform/multiplier.vcd" {0 0 0};
+    %vpi_call/w 3 56 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x561c4c62b490 {0 0 0};
+    %vpi_call/w 3 58 "$monitor", "t=%0t  a=%0d  b=%0d  product=%0d", $time, v0x561c4c641830_0, v0x561c4c6418f0_0, v0x561c4c6419c0_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "verification/testbench/multiply_tb.v";
+    "rtl/basic/multiplier.v";
